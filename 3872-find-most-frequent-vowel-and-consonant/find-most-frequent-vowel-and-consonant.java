@@ -1,41 +1,28 @@
 class Solution {
     public int maxFreqSum(String s) {
-        Map<Character,Integer> vowel = new HashMap<>();
-        Map<Character,Integer> consonant = new HashMap<>();
-        char c ;
-        int maxV=0,maxC=0;
-        int t;
-        for(int i =0;i<s.length();i++){
+        int[] vowel = new int[26];
+        int[] consonant = new int[26];
+
+        int i,j,maxV=0,maxC=0;
+        char c;
+        for(i=0;i<s.length();i++){
             c=s.charAt(i);
-            if(c=='a'|| c=='e' || c=='i'|| c=='o'|| c=='u'){
-                if(vowel.containsKey(c)){
-                    t=vowel.get(c);
-                    vowel.put(c,++t);
-                }else{
-                vowel.put(c,1);
-                }
+
+            if(c=='a' || c=='e' || c=='i'|| c=='o'|| c=='u'){
+                vowel[c-'a']++;
             }else{
-                if(consonant.containsKey(c)){
-                    t=consonant.get(c);
-                    consonant.put(c,++t);
-                }else{
-                consonant.put(c,1);
-                }
+                consonant[c-'a']++;
             }
         }
 
-        for(Map.Entry<Character,Integer> entry : vowel.entrySet()){
-            if(entry.getValue() > maxV){
-                maxV=entry.getValue();
+        for(i=0;i<26;i++){
+            if(vowel[i] > maxV){
+                maxV=vowel[i];
+            }
+            if(consonant[i] > maxC){
+                maxC=consonant[i];
             }
         }
-
-        for(Map.Entry<Character,Integer> entry : consonant.entrySet()){
-            if(entry.getValue()>maxC){
-                maxC=entry.getValue();
-            }
-        }
-return maxV+maxC;
-        
+        return maxV+maxC;
     }
 }
