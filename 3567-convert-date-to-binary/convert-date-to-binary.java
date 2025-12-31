@@ -5,17 +5,13 @@ class Solution {
         year = Integer.valueOf(date.substring(0, 4));
         month = Integer.valueOf(date.substring(5, 7));
         day = Integer.valueOf(date.substring(8, 10));
-        System.out.print("Day:" + day + " Month:" + month + " Year:" + year);
     }
 
     public String convertDateToBinary(String date) {
         convertStringDateToIntVariables(date);
-
         String sbr = new String(
                 Integer.toBinaryString(year) + "-" + Integer.toBinaryString(month) + "-" + Integer.toBinaryString(day));
-
         return sbr;
-
     }
 }
 
