@@ -10,7 +10,7 @@
  */
 class Solution {
     public int getGCD(int a, int b){
-        int tem = Math.min(a,b);
+        int tem = (a<b) ? a :b;
         while(tem > 0){
             if(a%tem == 0 && b%tem == 0){
                 break;
