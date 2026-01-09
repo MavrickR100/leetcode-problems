@@ -19,7 +19,6 @@ class Solution {
         }
         return tem;
     }
-
     public ListNode insertGreatestCommonDivisors(ListNode head) {
         ListNode current = head;
         ListNode next;
@@ -30,11 +29,9 @@ class Solution {
             ListNode tem = new ListNode(gcd);
             current.next = tem;
             tem.next = next;
-
             current = next;
             next =current.next;
         }
-
         return head;
     }
 }
