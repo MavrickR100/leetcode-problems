@@ -17,7 +17,6 @@ class Solution {
                 sum += current.val;
                 current = current.next;
             }
-            System.out.print("Sum:"+sum);
             return sum;
     }
 
@@ -36,20 +35,15 @@ class Solution {
             }
             current=current.next;
         }
-
-        firstZero = head;
         head=head.next;
         current = head;
-        
         while(current.next != null){
             if(current.next.val ==0){
                 current.next=current.next.next;
             }
-           System.out.print(current.val+" ");
             current=current.next;
             if(current == null) break;
         }
-
         return head;
 
         
