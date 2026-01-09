@@ -9,16 +9,14 @@
  * }
  */
 class Solution {
-    public int getGCD(int a, int b){
-        int tem = (a<b) ? a :b;
-        while(tem > 0){
-            if(a%tem == 0 && b%tem == 0){
-                break;
-            }
-            tem--;
-        }
-        return tem;
+public int getGCD(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
     }
+    return a;
+}
     public ListNode insertGreatestCommonDivisors(ListNode head) {
         ListNode current = head;
         ListNode next;
