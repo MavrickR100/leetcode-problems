@@ -13,32 +13,40 @@ class Solution {
         ListNode prev = list1;
         ListNode next = list1;
         ListNode endList2 = list2;
-        int node = 0;
 
-        while (prev != null) {
-            node++;
-            if (node < a) {
-                prev = prev.next;
-            } else {
-                break;
-            }
+        // while (prev != null) {
+        //     node++;
+        //     if (node < a) {
+        //         prev = prev.next;
+        //     } else {
+        //         break;
+        //     }
+        // }
+
+        for(int i=1;i<a;i++){
+            prev=prev.next;
         }
 
-        node = 0;
+   
+        next =prev;
 
-        while (next != null) {
-            node++;
-            if (node < b + 1) {
-                next = next.next;
-            } else {
-                break;
-            }
+        // while (next != null) {
+        //     node++;
+        //     if (node < b + 1) {
+        //         next = next.next;
+        //     } else {
+        //         break;
+        //     }
+        // }
+
+        for(int i=a;i<=b;i++){
+            next=next.next;
         }
 
         while (endList2.next != null) {
             endList2 = endList2.next;
         }
-        
+
         prev.next = list2;
         endList2.next = next.next;
 
