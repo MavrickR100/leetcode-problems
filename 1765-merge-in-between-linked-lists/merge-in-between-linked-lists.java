@@ -23,7 +23,6 @@ class Solution {
                 break;
             }
         }
-        System.out.println("prev val :"+prev.val);
         node =0;
          while(next != null){
             node++;
@@ -33,21 +32,9 @@ class Solution {
                 break;
             }
         }
-        System.out.println("Next val :"+next.val);
-        // while(prev != null || next != null){
-        //     node++;
-        //     if(node < a){
-        //         prev =prev.next;
-        //     }
-        //     if(node < b){
-        //         next = next.next;
-        //     }
-        //     if(node == b) break;
-        // }
         while(endList2.next != null){
             endList2 =endList2.next;
         }
-
         prev.next = list2;
         endList2.next = next.next;
 
