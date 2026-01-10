@@ -15,22 +15,33 @@ class Solution {
         ListNode endList2=list2;
         int node =0;
         
-        while(prev != null){
+        // while(prev != null){
+        //     node++;
+        //     if(node < a){
+        //         prev = prev.next;
+        //     }else{
+        //         break;
+        //     }
+        // }
+        // node =0;
+        //  while(next != null){
+        //     node++;
+        //     if(node < b+1){
+        //         next = next.next;
+        //     }else{
+        //         break;
+        //     }
+        // }
+
+        while(prev != null || next != null){
             node++;
             if(node < a){
-                prev = prev.next;
-            }else{
-                break;
+                prev =prev.next;
             }
-        }
-        node =0;
-         while(next != null){
-            node++;
             if(node < b+1){
                 next = next.next;
-            }else{
-                break;
             }
+            if(node == b+1) break;
         }
         while(endList2.next != null){
             endList2 =endList2.next;
